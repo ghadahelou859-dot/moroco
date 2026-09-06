@@ -1,23 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@400;700&family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap");
 
-/* =========================
-   الألوان الأساسية
-========================= */
-
 :root {
-  --ivory: #f3dfc6;
+  --ivory: #f8ead7;
   --beige: #efd8bc;
-  --beige-light: #f8ead7;
+  --cream: #fff9ef;
   --gold: #b37b2a;
   --gold-light: #dbb76d;
-  --cedar: #75401f;
+  --brown: #75401f;
   --rose: #873a4c;
-  --ink: #5b3924;
+  --text: #5b3924;
 }
-
-/* =========================
-   الإعدادات العامة
-========================= */
 
 * {
   box-sizing: border-box;
@@ -31,7 +23,7 @@ html {
 body {
   margin: 0;
   background: #dfc7aa;
-  color: var(--ink);
+  color: var(--text);
   font-family: "Noto Kufi Arabic", Tahoma, Arial, sans-serif;
 }
 
@@ -44,7 +36,8 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
-button {
+button,
+input {
   font-family: inherit;
 }
 
@@ -70,9 +63,7 @@ video {
   border: 0;
 }
 
-/* =========================
-   حاوية الكرت
-========================= */
+/* الحاوية الرئيسية */
 
 .invitation-app {
   width: min(100%, 540px);
@@ -83,9 +74,7 @@ video {
   box-shadow: 0 0 50px rgba(75, 45, 20, 0.18);
 }
 
-/* =========================
-   صفحة البوابة
-========================= */
+/* البوابة */
 
 .gate-scene {
   position: relative;
@@ -100,45 +89,40 @@ video {
   inset: 0;
   width: 100%;
   height: 100%;
+  background: #f5e5c4;
   object-fit: cover;
   object-position: center;
-  background: #f5e5c4;
 }
 
 .open-gate-button {
   position: absolute;
-  z-index: 3;
+  z-index: 5;
   left: 50%;
   bottom: 10%;
-  width: 54%;
-  height: 13%;
+  width: 58%;
+  height: 15%;
   transform: translateX(-50%);
   border: 0;
-  border-radius: 28px;
+  border-radius: 30px;
+  outline: none;
   background: transparent;
-  box-shadow: none;
   color: transparent;
   cursor: pointer;
 }
 
-.open-gate-button:focus-visible {
-  outline: 2px solid rgba(255, 245, 220, 0.85);
-  outline-offset: 4px;
-}
-
 .continue-cue {
   position: absolute;
-  z-index: 4;
-  bottom: 4.5%;
+  z-index: 6;
+  bottom: 4%;
   left: 50%;
   display: grid;
   place-items: center;
   transform: translateX(-50%);
-  color: var(--cedar);
-  font-size: 0.9rem;
+  color: var(--brown);
+  font-size: 0.85rem;
   text-decoration: none;
   text-shadow: 0 1px #fff;
-  animation: floatCue 1.7s ease-in-out infinite;
+  animation: cueMove 1.8s ease-in-out infinite;
 }
 
 .continue-cue span {
@@ -146,15 +130,13 @@ video {
   line-height: 0.8;
 }
 
-@keyframes floatCue {
+@keyframes cueMove {
   50% {
     transform: translate(-50%, 7px);
   }
 }
 
-/* =========================
-   زر الموسيقى
-========================= */
+/* زر الموسيقى */
 
 .music-toggle {
   position: fixed;
@@ -166,30 +148,28 @@ video {
   width: 46px;
   height: 46px;
   padding: 0;
-  border: 1px solid rgba(169, 111, 56, 0.42);
+  border: 1px solid rgba(179, 123, 42, 0.5);
   border-radius: 50%;
-  background: rgba(255, 248, 236, 0.92);
+  background: rgba(255, 249, 238, 0.92);
   box-shadow: 0 8px 24px rgba(91, 57, 36, 0.2);
-  color: #a96f38;
-  font: 700 1.3rem/1 Georgia, serif;
+  color: var(--gold);
+  font-size: 1.3rem;
   backdrop-filter: blur(8px);
   cursor: pointer;
 }
 
 .music-toggle.is-playing span {
-  animation: musicPulse 1.8s ease-in-out infinite;
+  animation: musicPulse 1.7s ease-in-out infinite;
 }
 
 @keyframes musicPulse {
   50% {
-    transform: scale(1.18);
-    color: #8f592c;
+    transform: scale(1.2);
+    color: var(--rose);
   }
 }
 
-/* =========================
-   الخط الزمني
-========================= */
+/* الخط الزمني */
 
 .timeline-section {
   --timeline-progress: 0;
@@ -207,40 +187,41 @@ video {
   background-size: 100% auto;
 }
 
+/* الشعر */
+
 .timeline-heading {
   position: relative;
-  z-index: 2;
-  width: 88%;
+  z-index: 3;
+  width: 90%;
   margin: 0 auto 118px;
-  padding: 8px 10px 32px;
-  color: var(--cedar);
+  padding: 8px 8px 34px;
+  color: var(--brown);
   text-align: center;
 }
 
 .poem-mark {
   display: block;
-  margin-bottom: 15px;
+  margin-bottom: 14px;
   color: var(--gold);
   font-size: 1.15rem;
 }
 
 .timeline-heading h1,
 .timeline-heading p {
-  font-family: "Aref Ruqaa", "Amiri", "Traditional Arabic", serif;
+  font-family: "Aref Ruqaa", "Amiri", serif;
   font-weight: 700;
-  letter-spacing: 0;
 }
 
 .timeline-heading h1 {
   margin: 0;
-  font-size: clamp(1.55rem, 6.4vw, 2.05rem);
-  line-height: 1.95;
+  font-size: clamp(1.5rem, 6vw, 2.05rem);
+  line-height: 1.9;
 }
 
 .timeline-heading p {
-  margin: 2px 0 0;
+  margin: 3px 0 0;
   color: var(--gold);
-  font-size: clamp(1.35rem, 5.5vw, 1.78rem);
+  font-size: clamp(1.3rem, 5.4vw, 1.75rem);
   line-height: 1.9;
 }
 
@@ -264,7 +245,7 @@ video {
   left: 50%;
   width: 2px;
   transform: translateX(-50%);
-  background: rgba(184, 132, 47, 0.16);
+  background: rgba(179, 123, 42, 0.16);
 }
 
 .timeline-line::after {
@@ -283,7 +264,7 @@ video {
 
 .travel-dot {
   position: absolute;
-  z-index: 3;
+  z-index: 4;
   top: var(--dot-y);
   left: 50%;
   width: 18px;
@@ -296,7 +277,7 @@ video {
   transition: top 0.22s linear;
 }
 
-/* عناصر الخط الزمني */
+/* عناصر الخط */
 
 .timeline-item {
   position: relative;
@@ -330,7 +311,7 @@ video {
   background: var(--gold);
 }
 
-/* ظهور العناصر عند السحب */
+/* حركة ظهور العناصر */
 
 .motion-item {
   opacity: 0;
@@ -345,15 +326,13 @@ video {
   transform: none;
 }
 
-/* =========================
-   الصور داخل الخط الزمني
-========================= */
+/* صور الخط الزمني */
 
 .timeline-asset {
   position: relative;
+  justify-self: center;
   width: min(92%, 180px);
   height: 190px;
-  justify-self: center;
   filter: drop-shadow(0 12px 14px rgba(92, 50, 18, 0.14));
 }
 
@@ -382,9 +361,7 @@ video {
   grid-column: 2;
 }
 
-/* =========================
-   التقويم
-========================= */
+/* التقويم */
 
 .calendar-card {
   grid-column: 1;
@@ -392,10 +369,10 @@ video {
   width: min(94%, 182px);
   padding: 12px 10px 14px;
   border: 1.5px solid var(--gold);
-  border-radius: 5px;
-  background: rgba(255, 250, 242, 0.9);
+  border-radius: 6px;
+  background: rgba(255, 250, 242, 0.92);
   box-shadow: 0 12px 25px rgba(92, 50, 18, 0.12);
-  color: var(--ink);
+  color: var(--text);
   text-align: center;
   backdrop-filter: blur(2px);
 }
@@ -404,7 +381,7 @@ video {
   display: block;
   padding-bottom: 8px;
   margin-bottom: 7px;
-  border-bottom: 1px solid rgba(184, 132, 47, 0.4);
+  border-bottom: 1px solid rgba(179, 123, 42, 0.4);
   color: var(--gold);
   font-size: 1.05rem;
 }
@@ -425,7 +402,7 @@ video {
 
 .calendar-days {
   margin-bottom: 3px;
-  color: var(--cedar);
+  color: var(--brown);
   font-family: Tahoma, Arial, sans-serif;
   font-size: 0.62rem;
   font-weight: 700;
@@ -466,14 +443,7 @@ video {
   );
 }
 
-.calendar-card + .timeline-copy {
-  grid-column: 2;
-  grid-row: 1;
-}
-
-/* =========================
-   نصوص التاريخ والساعة
-========================= */
+/* معلومات التاريخ والساعة */
 
 .timeline-copy {
   padding: 16px;
@@ -493,7 +463,7 @@ video {
 }
 
 .timeline-copy strong {
-  color: var(--ink);
+  color: var(--text);
   font-family: Georgia, "Noto Kufi Arabic", serif;
   font-size: 1.15rem;
 }
@@ -516,9 +486,12 @@ video {
   grid-row: 1;
 }
 
-/* =========================
-   منطقة الكشط
-========================= */
+.calendar-card + .timeline-copy {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+/* منطقة الكشط */
 
 .scratch-stage {
   position: relative;
@@ -526,7 +499,7 @@ video {
   margin: 62px -4px 100px;
   padding: 56px 12px 34px;
   border-block: 1px solid rgba(179, 123, 42, 0.2);
-  background: rgba(255, 249, 239, 0.66);
+  background: rgba(255, 249, 239, 0.68);
   backdrop-filter: blur(2px);
 }
 
@@ -561,10 +534,8 @@ video {
 }
 
 .scratch-couple {
-  display: block;
   width: 100%;
   height: 100%;
-  padding: 0;
   object-fit: cover;
   object-position: center;
 }
@@ -587,23 +558,19 @@ video {
   pointer-events: none;
 }
 
-/* =========================
-   زر الموقع
-========================= */
+/* الموقع */
 
 .location-art {
   text-decoration: none;
 }
 
 .location-art:focus-visible {
+  border-radius: 18px;
   outline: 3px solid rgba(179, 123, 42, 0.65);
   outline-offset: 5px;
-  border-radius: 18px;
 }
 
-/* =========================
-   تأكيد الحضور
-========================= */
+/* تأكيد الحضور */
 
 .rsvp-stage {
   position: relative;
@@ -622,11 +589,9 @@ video {
   padding: 10px 26px 24px;
   border: 1px solid var(--gold-light);
   border-radius: 24px;
-  background: rgba(255, 250, 242, 0.9);
+  background: rgba(255, 250, 242, 0.92);
   box-shadow: 0 16px 40px rgba(80, 39, 12, 0.12);
   color: var(--gold);
-  font: inherit;
-  backdrop-filter: blur(2px);
   cursor: pointer;
 }
 
@@ -653,17 +618,15 @@ video {
   filter: drop-shadow(0 10px 12px rgba(87, 45, 17, 0.2));
 }
 
-/* =========================
-   الصفحة الختامية
-========================= */
+/* الصفحة الختامية */
 
 .thank-you {
   position: relative;
   isolation: isolate;
   display: grid;
   place-items: center;
-  min-height: 620px;
-  padding: 100px 34px;
+  min-height: 680px;
+  padding: 90px 28px;
   overflow: hidden;
   border-top: 1px solid var(--gold-light);
   background: #f7ede0;
@@ -682,22 +645,22 @@ video {
 
 .thank-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   width: min(100%, 430px);
-  padding: 52px 24px;
-  color: var(--cedar);
+  padding: 45px 20px;
+  color: var(--brown);
   text-align: center;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.72);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 
 .thank-content::before,
 .thank-content::after {
   content: "✦ ◆ ✦";
   display: block;
-  margin: 0 auto 26px;
+  margin: 0 auto 25px;
   color: var(--gold);
   font-size: 0.8rem;
-  letter-spacing: 0.55em;
+  letter-spacing: 0.5em;
 }
 
 .thank-content::after {
@@ -711,38 +674,34 @@ video {
 }
 
 .thank-content > span {
-  font-family: "Aref Ruqaa", "Amiri", "Traditional Arabic", serif;
-  font-size: clamp(1.75rem, 7vw, 2.3rem);
-  line-height: 1.75;
+  font-family: "Aref Ruqaa", "Amiri", serif;
+  font-size: clamp(1.65rem, 6.5vw, 2.2rem);
+  line-height: 1.7;
 }
 
 .thank-content > strong {
   margin-top: 4px;
   color: #a96f38;
-  font-family: "Aref Ruqaa", "Amiri", "Traditional Arabic", serif;
-  font-size: clamp(1.55rem, 6.2vw, 2rem);
-  font-weight: 700;
-  line-height: 1.75;
+  font-family: "Aref Ruqaa", "Amiri", serif;
+  font-size: clamp(1.45rem, 5.8vw, 1.9rem);
+  line-height: 1.7;
 }
 
 .thank-content > small {
-  margin-top: 24px;
+  margin-top: 22px;
   color: var(--rose);
   font-family: Georgia, serif;
   font-size: 1rem;
 }
 
-/* =========================
-   مواقع التواصل الاجتماعي
-========================= */
+/* مواقع التواصل */
 
 .social-footer {
   display: grid;
   justify-items: center;
-  gap: 5px;
   width: min(100%, 390px);
-  margin: 42px auto 0;
-  padding: 22px 16px 0;
+  margin: 38px auto 0;
+  padding: 20px 12px 0;
   border-top: 1px solid rgba(179, 123, 42, 0.28);
   color: #8b6649;
   text-align: center;
@@ -753,110 +712,85 @@ video {
   display: block;
   color: #906037;
   font-family: "Noto Kufi Arabic", sans-serif;
-  font-size: 0.72rem;
-  font-weight: 500;
+  font-size: 0.7rem;
 }
 
 .social-brand-name {
   display: block;
-  color: var(--cedar);
+  margin-top: 3px;
+  color: var(--brown);
   font-family: Georgia, serif;
-  font-size: 0.88rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  font-size: 0.9rem;
 }
 
 .contact-title {
-  margin: 14px 0 8px;
+  margin: 15px 0 12px;
   color: #8b592f;
   font-family: "Noto Kufi Arabic", sans-serif;
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   font-weight: 600;
 }
 
 .social-icons {
-  display: flex;
+  display: flex !important;
   direction: ltr;
   justify-content: center;
   align-items: center;
-  gap: 14px;
-  margin-top: 2px;
+  gap: 15px;
+  width: 100%;
 }
 
 .social-icons .social-link {
   position: relative;
-  display: grid;
+  display: grid !important;
+  flex: 0 0 48px;
   place-items: center;
-  width: 46px;
-  height: 46px;
-  padding: 0;
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px;
+  padding: 0 !important;
+  margin: 0 !important;
   overflow: hidden;
-  border: 1px solid rgba(255, 250, 235, 0.8);
-  border-radius: 50%;
-  background: linear-gradient(
-    145deg,
-    #d7a262 0%,
-    #ad6d37 52%,
-    #854821 100%
-  );
-  box-shadow:
-    0 7px 16px rgba(105, 61, 29, 0.2),
-    inset 0 1px 2px rgba(255, 255, 255, 0.55);
-  color: #fffaf1;
+  border: 1px solid #c99755 !important;
+  border-radius: 50% !important;
+  background: rgba(255, 250, 240, 0.9) !important;
+  box-shadow: 0 7px 17px rgba(112, 68, 34, 0.15);
+  color: #8b592f !important;
   text-decoration: none;
   transition:
     transform 0.25s ease,
-    box-shadow 0.25s ease,
-    filter 0.25s ease;
-}
-
-.social-icons .social-link::before {
-  content: "";
-  position: absolute;
-  top: 4px;
-  left: 8px;
-  width: 22px;
-  height: 9px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.24);
-  transform: rotate(-20deg);
+    background 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .social-icons .social-link:hover,
 .social-icons .social-link:focus-visible {
   transform: translateY(-4px) scale(1.06);
-  filter: brightness(1.06);
   outline: none;
-  box-shadow:
-    0 11px 22px rgba(105, 61, 29, 0.28),
-    inset 0 1px 2px rgba(255, 255, 255, 0.55);
+  background: #ecd3ae !important;
+  box-shadow: 0 11px 22px rgba(112, 68, 34, 0.23);
 }
 
 .social-icons .social-link:active {
   transform: scale(0.93);
 }
 
+/* مهم: إظهار الأيقونات */
+
 .social-icons .social-link svg {
   position: relative;
-  z-index: 1;
-  width: 23px;
-  height: 23px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+  z-index: 4;
+  display: block !important;
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px;
+  min-height: 24px;
+  overflow: visible;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
-.social-icons .tiktok-link svg,
-.social-icons .snapchat-link svg {
-  fill: currentColor;
-  stroke: none;
-}
-
-/* =========================
-   النوافذ المنبثقة
-========================= */
+/* نافذة بطاقة الخطوبة */
 
 .modal-overlay {
   position: fixed;
@@ -902,21 +836,18 @@ video {
   cursor: pointer;
 }
 
-/* بطاقة الخطوبة */
-
 .engagement-card-wrap {
   position: relative;
 }
 
 .engagement-image {
-  display: block;
   width: 100%;
   height: auto;
 }
 
 .engagement-map-hotspot {
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   bottom: 1.5%;
   left: 31%;
   width: 38%;
@@ -925,12 +856,7 @@ video {
   background: transparent;
 }
 
-.engagement-map-hotspot:focus-visible {
-  outline: 3px solid rgba(169, 111, 56, 0.72);
-  outline-offset: 2px;
-}
-
-/* نموذج تأكيد الحضور */
+/* نافذة تأكيد الحضور */
 
 .rsvp-modal-card {
   direction: rtl;
@@ -961,13 +887,12 @@ video {
   border-radius: 12px;
   outline: none;
   background: #fffaf0;
-  color: var(--ink);
-  font: inherit;
+  color: var(--text);
 }
 
 .rsvp-modal-card input:focus {
   border-color: var(--gold);
-  box-shadow: 0 0 0 3px rgba(184, 132, 47, 0.12);
+  box-shadow: 0 0 0 3px rgba(179, 123, 42, 0.13);
 }
 
 .attendance-options {
@@ -982,13 +907,12 @@ video {
   padding: 12px;
   border: 1px solid var(--gold-light);
   border-radius: 12px;
-  font: inherit;
   cursor: pointer;
 }
 
 .attendance-options button {
   background: #fffaf0;
-  color: var(--ink);
+  color: var(--text);
 }
 
 .attendance-options button.selected {
@@ -1005,9 +929,7 @@ video {
   font-weight: 700;
 }
 
-/* =========================
-   الهواتف الصغيرة
-========================= */
+/* الشاشات الصغيرة */
 
 @media (max-width: 380px) {
   .timeline-section {
@@ -1032,23 +954,23 @@ video {
   }
 
   .social-icons {
-    gap: 11px;
+    gap: 12px;
   }
 
   .social-icons .social-link {
-    width: 43px;
-    height: 43px;
+    flex-basis: 44px;
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px;
   }
 
   .social-icons .social-link svg {
-    width: 21px;
-    height: 21px;
+    width: 22px !important;
+    height: 22px !important;
   }
 }
 
-/* =========================
-   تقليل الحركة حسب إعداد الجهاز
-========================= */
+/* تقليل الحركة حسب إعداد الهاتف */
 
 @media (prefers-reduced-motion: reduce) {
   html {
