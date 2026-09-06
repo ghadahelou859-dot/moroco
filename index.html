@@ -18,7 +18,6 @@
     content="دعوة عبد القادر وسلمى التفاعلية"
   >
 
-  <!-- الخطوط العربية -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
   <link
@@ -32,7 +31,6 @@
     rel="stylesheet"
   >
 
-  <!-- ملف التنسيق -->
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -49,7 +47,7 @@
     ></audio>
 
 
-    <!-- صفحة البوابة -->
+    <!-- البوابة -->
     <section id="gateScene" class="gate-scene">
 
       <video
@@ -63,7 +61,6 @@
         preload="metadata"
       ></video>
 
-      <!-- زر شفاف فوق الباب -->
       <button
         id="openGate"
         class="open-gate-button"
@@ -73,7 +70,6 @@
         <span class="sr-only">فتح البوابة</span>
       </button>
 
-      <!-- يظهر بعد انتهاء فيديو فتح الباب -->
       <a
         id="continueCue"
         class="continue-cue"
@@ -87,12 +83,12 @@
     </section>
 
 
-    <!-- زر تشغيل وإيقاف الموسيقى -->
+    <!-- زر الموسيقى -->
     <button
       id="musicToggle"
       class="music-toggle"
       type="button"
-      aria-label="إيقاف الموسيقى"
+      aria-label="تشغيل أو إيقاف الموسيقى"
       hidden
     >
       <span aria-hidden="true">♫</span>
@@ -102,7 +98,6 @@
     <!-- الخط الزمني -->
     <section id="timeline" class="timeline-section">
 
-      <!-- الشعر -->
       <header class="timeline-heading motion-item">
 
         <span class="poem-mark" aria-hidden="true">✦</span>
@@ -118,7 +113,6 @@
       </header>
 
 
-      <!-- الخط والدائرة المتحركة -->
       <div class="timeline-line" aria-hidden="true">
         <span class="travel-dot"></span>
       </div>
@@ -131,7 +125,7 @@
 
         <div
           class="calendar-card"
-          aria-label="تقويم يوليو 2027، يوم الأربعاء السابع محدد"
+          aria-label="تقويم يوليو 2027 واليوم السابع محدد"
         >
 
           <strong>يوليو</strong>
@@ -205,10 +199,12 @@
         <div class="timeline-dot"></div>
 
         <div class="timeline-asset clock-asset">
+
           <img
             src="clock-cutout.png"
             alt="ساعة نحاسية تشير إلى السابعة"
           >
+
         </div>
 
         <div class="timeline-copy">
@@ -219,7 +215,7 @@
       </article>
 
 
-      <!-- منطقة الكشط -->
+      <!-- الكشط -->
       <article class="scratch-stage motion-item">
 
         <div class="timeline-dot"></div>
@@ -230,7 +226,7 @@
 
         <div
           class="scratch-shell"
-          aria-label="لوحة كشط تكشف بطاقة الخطوبة"
+          aria-label="اكشط الصورة لكشف بطاقة الخطوبة"
         >
 
           <div class="scratch-underlay">
@@ -238,7 +234,7 @@
             <img
               class="scratch-couple"
               src="couple-henna-scene.png"
-              alt="العروسان جالسان بلباس مغربي وسط أجواء الحنة"
+              alt="العروسان بلباس مغربي وسط أجواء الحنة"
             >
 
           </div>
@@ -253,7 +249,7 @@
       </article>
 
 
-      <!-- الموقع -->
+      <!-- موقع القاعة -->
       <article class="timeline-item right location-item motion-item">
 
         <div class="timeline-dot"></div>
@@ -348,7 +344,7 @@
         </small>
 
 
-        <!-- مواقع التواصل الاجتماعي -->
+        <!-- مواقع التواصل -->
         <footer class="social-footer">
 
           <span class="social-design-title">
@@ -366,7 +362,7 @@
 
           <nav
             class="social-icons"
-            aria-label="حسابات Invitation by Ghada"
+            aria-label="مواقع التواصل الاجتماعي"
           >
 
             <!-- Instagram -->
@@ -375,13 +371,15 @@
               href="https://www.instagram.com/ghada.invitations?igsi=dndkd3lhMmJ0M2E5&utm_source=qr"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="التواصل عبر إنستغرام"
+              aria-label="إنستغرام"
             >
 
               <svg
                 viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                role="img"
                 aria-hidden="true"
-                focusable="false"
               >
                 <rect
                   x="3"
@@ -389,22 +387,27 @@
                   width="18"
                   height="18"
                   rx="5"
-                ></rect>
+                  fill="none"
+                  stroke="#8b592f"
+                  stroke-width="2"
+                />
 
                 <circle
                   cx="12"
                   cy="12"
                   r="4"
-                ></circle>
+                  fill="none"
+                  stroke="#8b592f"
+                  stroke-width="2"
+                />
 
                 <circle
                   cx="17.5"
                   cy="6.5"
-                  r="1"
-                ></circle>
+                  r="1.2"
+                  fill="#8b592f"
+                />
               </svg>
-
-              <span class="sr-only">Instagram</span>
 
             </a>
 
@@ -415,20 +418,21 @@
               href="https://www.tiktok.com/@ghada.invitations?_r=1&_t=ZS-99Ru8uGvd10"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="التواصل عبر تيك توك"
+              aria-label="تيك توك"
             >
 
               <svg
                 viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                role="img"
                 aria-hidden="true"
-                focusable="false"
               >
                 <path
-                  d="M14 3.5v10.7a4.5 4.5 0 1 1-3.5-4.4v3.2a1.65 1.65 0 1 0 .6 1.2V3.5H14c.35 2.05 1.75 3.45 4 3.8v3.05c-1.55-.2-3-.8-4-1.7z"
-                ></path>
+                  fill="#8b592f"
+                  d="M14.2 3v10.5a4.9 4.9 0 1 1-4.4-4.8v3.1a1.9 1.9 0 1 0 1.3 1.8V3h3.1c.3 2.1 1.7 3.5 4 3.9V10c-1.5-.2-2.9-.8-4-1.7V3z"
+                />
               </svg>
-
-              <span class="sr-only">TikTok</span>
 
             </a>
 
@@ -439,20 +443,21 @@
               href="https://snapchat.com/t/n8AEKXRm"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="التواصل عبر سناب شات"
+              aria-label="سناب شات"
             >
 
               <svg
                 viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                role="img"
                 aria-hidden="true"
-                focusable="false"
               >
                 <path
-                  d="M12 3.3c-2.8 0-4.4 2.2-4.4 5.1 0 .7.1 1.5-.1 2.1-.4.7-1.2 1.1-2 1.4-.6.2-.7.8-.2 1.2.6.5 1.3.7 2 .9.4 1.2 1.4 1.8 2.6 2.1.6.2.8.8 1.1 1.2.3.5 1.7.5 2 0 .3-.4.5-1 1.1-1.2 1.2-.3 2.2-.9 2.6-2.1.7-.2 1.4-.4 2-.9.5-.4.4-1-.2-1.2-.8-.3-1.6-.7-2-1.4-.2-.6-.1-1.4-.1-2.1 0-2.9-1.6-5.1-4.4-5.1z"
-                ></path>
+                  fill="#8b592f"
+                  d="M12 2.8c-3 0-4.8 2.3-4.8 5.5 0 .8.1 1.5-.1 2.1-.4.8-1.4 1.2-2.2 1.5-.8.3-.9 1.1-.2 1.6.6.5 1.4.8 2.2 1 .5 1.3 1.6 2 2.9 2.4.7.2.9.8 1.2 1.3.4.6 1.7.6 2.1 0 .3-.5.5-1.1 1.2-1.3 1.3-.4 2.4-1.1 2.9-2.4.8-.2 1.6-.5 2.2-1 .7-.5.6-1.3-.2-1.6-.8-.3-1.8-.7-2.2-1.5-.2-.6-.1-1.3-.1-2.1 0-3.2-1.9-5.5-4.9-5.5z"
+                />
               </svg>
-
-              <span class="sr-only">Snapchat</span>
 
             </a>
 
@@ -483,7 +488,7 @@
         class="modal-close"
         type="button"
         data-close="engagementModal"
-        aria-label="إغلاق بطاقة الخطوبة"
+        aria-label="إغلاق"
       >
         ×
       </button>
@@ -492,11 +497,10 @@
 
         <img
           src="engagement-card-final.png"
-          alt="بطاقة حفل الخطوبة، 5 يوليو 2027، الساعة الخامسة مساءً في قاعة زهرة المدائن حزما"
+          alt="بطاقة حفل الخطوبة"
           class="engagement-image"
         >
 
-        <!-- زر شفاف فوق موقع الحنة -->
         <a
           class="engagement-map-hotspot"
           href="https://maps.app.goo.gl/1dP7Pm91yM7NdRwT7"
@@ -530,7 +534,7 @@
         class="modal-close"
         type="button"
         data-close="rsvpModal"
-        aria-label="إغلاق نافذة تأكيد الحضور"
+        aria-label="إغلاق"
       >
         ×
       </button>
@@ -590,7 +594,6 @@
   </div>
 
 
-  <!-- ملف الحركة والتفاعل -->
   <script src="script.js"></script>
 
 </body>
