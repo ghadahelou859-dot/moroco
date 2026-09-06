@@ -1,132 +1,597 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
+
   <meta name="theme-color" content="#f3dfc6">
+
   <title>دعوة عبد القادر وسلمى</title>
-  <meta name="description" content="دعوة عبد القادر وسلمى التفاعلية">
+
+  <meta
+    name="description"
+    content="دعوة عبد القادر وسلمى التفاعلية"
+  >
+
+  <!-- الخطوط العربية -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@400;700&family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@400;700&family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- ملف التنسيق -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<main class="invitation-app">
-  <audio id="music" src="medina-lights.mp3" loop preload="metadata"></audio>
 
-  <section id="gateScene" class="gate-scene">
-    <video id="gateVideo" class="gate-video" src="gate-opening-mobile.mp4" poster="gate-closed.png" playsinline webkit-playsinline muted preload="metadata"></video>
-    <button id="openGate" class="open-gate-button" type="button" aria-label="فتح البوابة"><span class="sr-only">فتح البوابة</span></button>
-    <a id="continueCue" class="continue-cue" href="#timeline" hidden>اسحب للأسفل<span aria-hidden="true">⌄</span></a>
-  </section>
+  <main class="invitation-app">
 
-  <button id="musicToggle" class="music-toggle" type="button" aria-label="إيقاف الموسيقى" hidden><span>♫</span></button>
+    <!-- الموسيقى -->
+    <audio
+      id="music"
+      src="medina-lights.mp3"
+      loop
+      preload="metadata"
+    ></audio>
 
-  <section id="timeline" class="timeline-section">
-    <header class="timeline-heading motion-item">
-      <span class="poem-mark" aria-hidden="true">✦</span>
-      <h1>قلبانِ قد جمعَ الهوى خُطواتِهما</h1>
-      <p>فغدا الطريقُ إلى المودّةِ واحدًا</p>
-    </header>
 
-    <div class="timeline-line" aria-hidden="true"><span class="travel-dot"></span></div>
+    <!-- صفحة البوابة -->
+    <section id="gateScene" class="gate-scene">
 
-    <article class="timeline-item right motion-item">
-      <div class="timeline-dot"></div>
-      <div class="calendar-card" aria-label="تقويم يوليو 2027، يوم الأربعاء السابع محدد">
-        <strong>يوليو</strong>
-        <div class="calendar-grid calendar-days"><span>ح</span><span>ن</span><span>ث</span><span>ر</span><span>خ</span><span>ج</span><span>س</span></div>
-        <div class="calendar-grid" dir="rtl">
-          <span></span><span></span><span></span><span></span>
-          <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span>
-          <span class="chosen-day">7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span>
-          <span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span>
-          <span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span>
-          <span>28</span><span>29</span><span>30</span><span>31</span>
-        </div>
-      </div>
-      <div class="timeline-copy"><span>موعد فرحتنا</span><strong>07 / 07 / 2027</strong></div>
-    </article>
+      <video
+        id="gateVideo"
+        class="gate-video"
+        src="gate-opening-mobile.mp4"
+        poster="gate-closed.png"
+        playsinline
+        webkit-playsinline
+        muted
+        preload="metadata"
+      ></video>
 
-    <article class="timeline-item left motion-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-asset clock-asset"><img src="clock-cutout.png" alt="ساعة نحاسية تشير إلى السابعة"></div>
-      <div class="timeline-copy"><span>الساعة</span><strong>7:00 مساءً</strong></div>
-    </article>
-
-    <article class="scratch-stage motion-item">
-      <div class="timeline-dot"></div>
-      <p class="scratch-intro">هناك مناسبة تسبق فرحتنا…</p>
-      <div class="scratch-shell" aria-label="لوحة كشط تكشف بطاقة الخطوبة">
-        <div class="scratch-underlay"><img class="scratch-couple" src="couple-henna-scene.png" alt="العروسان جالسان بلباس مغربي وسط أجواء الحنة"></div>
-        <canvas id="scratchCanvas" class="scratch-canvas"></canvas>
-      </div>
-    </article>
-
-    <article class="timeline-item right location-item motion-item">
-      <div class="timeline-dot"></div>
-      <a class="timeline-asset location-art fountain-asset" href="https://maps.app.goo.gl/mojCypNfgREqrDM96?g_st=ic" target="_blank" rel="noopener" aria-label="فتح موقع قاعة زهرة المدائن">
-        <img src="fountain-cutout.png" alt="نافورة مغربية">
-      </a>
-      <div class="timeline-copy">
-        <span>قاعة زهرة المدائن</span><strong>حزما</strong>
-        <a href="https://maps.app.goo.gl/mojCypNfgREqrDM96?g_st=ic" target="_blank" rel="noopener">اضغط لفتح الموقع</a>
-      </div>
-    </article>
-
-    <article class="rsvp-stage motion-item">
-      <div class="timeline-dot"></div>
-      <button id="openRsvp" class="rsvp-trigger" type="button">
-        <span class="rsvp-object"><img src="incense-cutout.png" alt="مبخرة نحاسية"></span>
-        <strong>تأكيد الحضور</strong><small>اضغط هنا</small>
+      <!-- زر شفاف فوق الباب -->
+      <button
+        id="openGate"
+        class="open-gate-button"
+        type="button"
+        aria-label="فتح البوابة"
+      >
+        <span class="sr-only">فتح البوابة</span>
       </button>
-    </article>
-  </section>
 
-  <section class="thank-you">
-    <img src="closing-background-light.png" alt="" class="thank-background" aria-hidden="true">
-    <div class="thank-content">
-      <span>بحضوركم تكتمل فرحتنا</span>
-      <strong>وتزهر ليلتنا بالمودّة والهناء</strong>
-      <small>عبد القادر &amp; سلمى</small>
-      <footer class="social-footer">
-        <span>تصميم وتنفيذ</span>
-        <b>Inviteation by Ghada</b>
-        <nav aria-label="حسابات Inviteation by Ghada">
-          <a href="https://www.instagram.com/ghada.invitations?utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a>
-          <a href="https://www.tiktok.com/@ghada.invitations?_r=1&_t=ZS-99P2dCRz9WR" target="_blank" rel="noopener noreferrer">TikTok</a>
-          <a href="https://snapchat.com/t/uYUYp40i" target="_blank" rel="noopener noreferrer">Snapchat</a>
-        </nav>
-      </footer>
-    </div>
-  </section>
-</main>
+      <!-- يظهر بعد انتهاء فيديو فتح الباب -->
+      <a
+        id="continueCue"
+        class="continue-cue"
+        href="#timeline"
+        hidden
+      >
+        اسحب للأسفل
+        <span aria-hidden="true">⌄</span>
+      </a>
 
-<div id="engagementModal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="بطاقة حفل الخطوبة" hidden>
-  <div class="modal-card">
-    <button class="modal-close" type="button" data-close="engagementModal" aria-label="إغلاق">×</button>
-    <div class="engagement-card-wrap">
-      <img src="engagement-card-final.png" alt="بطاقة حفل الخطوبة، 5 يوليو 2027، الساعة الخامسة مساءً في قاعة زهرة المدائن حزما" class="engagement-image">
-      <a class="engagement-map-hotspot" href="https://maps.app.goo.gl/1dP7Pm91yM7NdRwT7" target="_blank" rel="noopener" aria-label="فتح موقع الحنة"><span class="sr-only">فتح موقع الحنة</span></a>
+    </section>
+
+
+    <!-- زر تشغيل وإيقاف الموسيقى -->
+    <button
+      id="musicToggle"
+      class="music-toggle"
+      type="button"
+      aria-label="إيقاف الموسيقى"
+      hidden
+    >
+      <span aria-hidden="true">♫</span>
+    </button>
+
+
+    <!-- الخط الزمني -->
+    <section id="timeline" class="timeline-section">
+
+      <!-- الشعر -->
+      <header class="timeline-heading motion-item">
+
+        <span class="poem-mark" aria-hidden="true">✦</span>
+
+        <h1>
+          قلبانِ قد جمعَ الهوى خُطواتِهما
+        </h1>
+
+        <p>
+          فغدا الطريقُ إلى المودّةِ واحدًا
+        </p>
+
+      </header>
+
+
+      <!-- الخط والدائرة المتحركة -->
+      <div class="timeline-line" aria-hidden="true">
+        <span class="travel-dot"></span>
+      </div>
+
+
+      <!-- التاريخ -->
+      <article class="timeline-item right motion-item">
+
+        <div class="timeline-dot"></div>
+
+        <div
+          class="calendar-card"
+          aria-label="تقويم يوليو 2027، يوم الأربعاء السابع محدد"
+        >
+
+          <strong>يوليو</strong>
+
+          <div class="calendar-grid calendar-days">
+            <span>ح</span>
+            <span>ن</span>
+            <span>ث</span>
+            <span>ر</span>
+            <span>خ</span>
+            <span>ج</span>
+            <span>س</span>
+          </div>
+
+          <div class="calendar-grid" dir="rtl">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+            <span>6</span>
+
+            <span class="chosen-day">7</span>
+
+            <span>8</span>
+            <span>9</span>
+            <span>10</span>
+            <span>11</span>
+            <span>12</span>
+            <span>13</span>
+            <span>14</span>
+            <span>15</span>
+            <span>16</span>
+            <span>17</span>
+            <span>18</span>
+            <span>19</span>
+            <span>20</span>
+            <span>21</span>
+            <span>22</span>
+            <span>23</span>
+            <span>24</span>
+            <span>25</span>
+            <span>26</span>
+            <span>27</span>
+            <span>28</span>
+            <span>29</span>
+            <span>30</span>
+            <span>31</span>
+
+          </div>
+
+        </div>
+
+        <div class="timeline-copy">
+          <span>موعد فرحتنا</span>
+          <strong>07 / 07 / 2027</strong>
+        </div>
+
+      </article>
+
+
+      <!-- الساعة -->
+      <article class="timeline-item left motion-item">
+
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-asset clock-asset">
+          <img
+            src="clock-cutout.png"
+            alt="ساعة نحاسية تشير إلى السابعة"
+          >
+        </div>
+
+        <div class="timeline-copy">
+          <span>الساعة</span>
+          <strong>7:00 مساءً</strong>
+        </div>
+
+      </article>
+
+
+      <!-- منطقة الكشط -->
+      <article class="scratch-stage motion-item">
+
+        <div class="timeline-dot"></div>
+
+        <p class="scratch-intro">
+          هناك مناسبة تسبق فرحتنا…
+        </p>
+
+        <div
+          class="scratch-shell"
+          aria-label="لوحة كشط تكشف بطاقة الخطوبة"
+        >
+
+          <div class="scratch-underlay">
+
+            <img
+              class="scratch-couple"
+              src="couple-henna-scene.png"
+              alt="العروسان جالسان بلباس مغربي وسط أجواء الحنة"
+            >
+
+          </div>
+
+          <canvas
+            id="scratchCanvas"
+            class="scratch-canvas"
+          ></canvas>
+
+        </div>
+
+      </article>
+
+
+      <!-- الموقع -->
+      <article class="timeline-item right location-item motion-item">
+
+        <div class="timeline-dot"></div>
+
+        <a
+          class="timeline-asset location-art fountain-asset"
+          href="https://maps.app.goo.gl/mojCypNfgREqrDM96?g_st=ic"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="فتح موقع قاعة زهرة المدائن"
+        >
+
+          <img
+            src="fountain-cutout.png"
+            alt="نافورة مغربية"
+          >
+
+        </a>
+
+        <div class="timeline-copy">
+
+          <span>قاعة زهرة المدائن</span>
+
+          <strong>حزما</strong>
+
+          <a
+            href="https://maps.app.goo.gl/mojCypNfgREqrDM96?g_st=ic"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            اضغط لفتح الموقع
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- تأكيد الحضور -->
+      <article class="rsvp-stage motion-item">
+
+        <div class="timeline-dot"></div>
+
+        <button
+          id="openRsvp"
+          class="rsvp-trigger"
+          type="button"
+        >
+
+          <span class="rsvp-object">
+
+            <img
+              src="incense-cutout.png"
+              alt="مبخرة نحاسية"
+            >
+
+          </span>
+
+          <strong>تأكيد الحضور</strong>
+
+          <small>اضغط هنا</small>
+
+        </button>
+
+      </article>
+
+    </section>
+
+
+    <!-- الصفحة الختامية -->
+    <section class="thank-you">
+
+      <img
+        src="closing-background-light.png"
+        alt=""
+        class="thank-background"
+        aria-hidden="true"
+      >
+
+      <div class="thank-content">
+
+        <span>
+          بحضوركم تكتمل فرحتنا
+        </span>
+
+        <strong>
+          وتزهر ليلتنا بالمودّة والهناء
+        </strong>
+
+        <small>
+          عبد القادر &amp; سلمى
+        </small>
+
+
+        <!-- مواقع التواصل الاجتماعي -->
+        <footer class="social-footer">
+
+          <span class="social-design-title">
+            تصميم وتنفيذ
+          </span>
+
+          <b class="social-brand-name">
+            Invitation by Ghada
+          </b>
+
+          <p class="contact-title">
+            تواصلوا معنا
+          </p>
+
+
+          <nav
+            class="social-icons"
+            aria-label="حسابات Invitation by Ghada"
+          >
+
+            <!-- Instagram -->
+            <a
+              class="social-link instagram-link"
+              href="https://www.instagram.com/ghada.invitations?igsi=dndkd3lhMmJ0M2E5&utm_source=qr"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="التواصل عبر إنستغرام"
+            >
+
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <rect
+                  x="3"
+                  y="3"
+                  width="18"
+                  height="18"
+                  rx="5"
+                ></rect>
+
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="4"
+                ></circle>
+
+                <circle
+                  cx="17.5"
+                  cy="6.5"
+                  r="1"
+                ></circle>
+              </svg>
+
+              <span class="sr-only">Instagram</span>
+
+            </a>
+
+
+            <!-- TikTok -->
+            <a
+              class="social-link tiktok-link"
+              href="https://www.tiktok.com/@ghada.invitations?_r=1&_t=ZS-99Ru8uGvd10"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="التواصل عبر تيك توك"
+            >
+
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M14 3.5v10.7a4.5 4.5 0 1 1-3.5-4.4v3.2a1.65 1.65 0 1 0 .6 1.2V3.5H14c.35 2.05 1.75 3.45 4 3.8v3.05c-1.55-.2-3-.8-4-1.7z"
+                ></path>
+              </svg>
+
+              <span class="sr-only">TikTok</span>
+
+            </a>
+
+
+            <!-- Snapchat -->
+            <a
+              class="social-link snapchat-link"
+              href="https://snapchat.com/t/n8AEKXRm"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="التواصل عبر سناب شات"
+            >
+
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M12 3.3c-2.8 0-4.4 2.2-4.4 5.1 0 .7.1 1.5-.1 2.1-.4.7-1.2 1.1-2 1.4-.6.2-.7.8-.2 1.2.6.5 1.3.7 2 .9.4 1.2 1.4 1.8 2.6 2.1.6.2.8.8 1.1 1.2.3.5 1.7.5 2 0 .3-.4.5-1 1.1-1.2 1.2-.3 2.2-.9 2.6-2.1.7-.2 1.4-.4 2-.9.5-.4.4-1-.2-1.2-.8-.3-1.6-.7-2-1.4-.2-.6-.1-1.4-.1-2.1 0-2.9-1.6-5.1-4.4-5.1z"
+                ></path>
+              </svg>
+
+              <span class="sr-only">Snapchat</span>
+
+            </a>
+
+          </nav>
+
+        </footer>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- نافذة بطاقة الخطوبة -->
+  <div
+    id="engagementModal"
+    class="modal-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-label="بطاقة حفل الخطوبة"
+    hidden
+  >
+
+    <div class="modal-card">
+
+      <button
+        class="modal-close"
+        type="button"
+        data-close="engagementModal"
+        aria-label="إغلاق بطاقة الخطوبة"
+      >
+        ×
+      </button>
+
+      <div class="engagement-card-wrap">
+
+        <img
+          src="engagement-card-final.png"
+          alt="بطاقة حفل الخطوبة، 5 يوليو 2027، الساعة الخامسة مساءً في قاعة زهرة المدائن حزما"
+          class="engagement-image"
+        >
+
+        <!-- زر شفاف فوق موقع الحنة -->
+        <a
+          class="engagement-map-hotspot"
+          href="https://maps.app.goo.gl/1dP7Pm91yM7NdRwT7"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="فتح موقع الحنة"
+        >
+          <span class="sr-only">فتح موقع الحنة</span>
+        </a>
+
+      </div>
+
     </div>
+
   </div>
-</div>
 
-<div id="rsvpModal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="تأكيد الحضور" hidden>
-  <div class="modal-card rsvp-modal-card">
-    <button class="modal-close" type="button" data-close="rsvpModal" aria-label="إغلاق">×</button>
-    <h2>تأكيد الحضور</h2>
-    <p>يسعدنا معرفة إن كنتم ستشاركوننا فرحتنا</p>
-    <label><span>الاسم</span><input id="guestName" type="text" placeholder="اكتب اسمك" autocomplete="name"></label>
-    <div class="attendance-options" role="group" aria-label="اختيار الحضور">
-      <button id="attendYes" class="selected" type="button">سأحضر</button>
-      <button id="attendNo" type="button">أعتذر</button>
+
+  <!-- نافذة تأكيد الحضور -->
+  <div
+    id="rsvpModal"
+    class="modal-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-label="تأكيد الحضور"
+    hidden
+  >
+
+    <div class="modal-card rsvp-modal-card">
+
+      <button
+        class="modal-close"
+        type="button"
+        data-close="rsvpModal"
+        aria-label="إغلاق نافذة تأكيد الحضور"
+      >
+        ×
+      </button>
+
+      <h2>تأكيد الحضور</h2>
+
+      <p>
+        يسعدنا معرفة إن كنتم ستشاركوننا فرحتنا
+      </p>
+
+      <label for="guestName">
+
+        <span>الاسم</span>
+
+        <input
+          id="guestName"
+          type="text"
+          placeholder="اكتب اسمك"
+          autocomplete="name"
+        >
+
+      </label>
+
+      <div
+        class="attendance-options"
+        role="group"
+        aria-label="اختيار الحضور"
+      >
+
+        <button
+          id="attendYes"
+          class="selected"
+          type="button"
+        >
+          سأحضر
+        </button>
+
+        <button
+          id="attendNo"
+          type="button"
+        >
+          أعتذر
+        </button>
+
+      </div>
+
+      <button
+        id="sendRsvp"
+        class="send-rsvp"
+        type="button"
+      >
+        إرسال التأكيد عبر واتساب
+      </button>
+
     </div>
-    <button id="sendRsvp" class="send-rsvp" type="button">إرسال التأكيد عبر واتساب</button>
-  </div>
-</div>
 
-<script src="script.js"></script>
+  </div>
+
+
+  <!-- ملف الحركة والتفاعل -->
+  <script src="script.js"></script>
+
 </body>
 </html>
